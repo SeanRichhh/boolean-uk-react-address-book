@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-function ContactsAdd(props) {
+function ContactsAdd({ setContacts, contacts }) {
 
   // setContacts and contacts must be passed as props
   // to this component so new contacts can be added to the
   // state
-  const { setContacts, contacts } = props
+ 
 
   //TODO: Implement controlled form
   //send POST to json server on form submit

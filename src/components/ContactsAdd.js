@@ -14,12 +14,15 @@ function ContactsAdd({ setContacts, contacts }) {
     lastName: "",
     street: "",
     city: "",
-  }
+    email: "",
+    linkedIn:"",
+    twitter: "",
+  };
 
-const [newForm, setNewForm] = useState(formContact)
+  const [newForm, setNewForm] = useState(formContact);
 
-  function onSubmitForm (event){
-    event.preventDefault()
+  function onSubmitForm(event) {
+    event.preventDefault();
     fetch("http://localhost:4000/contacts", {
       method: "POST",
       headers: {
@@ -35,48 +38,75 @@ const [newForm, setNewForm] = useState(formContact)
       });
   }
 
-  const handleChange = (event) =>{
-    setNewForm({ ...newForm, [event.target.name]: event.target.value })
-  }
+  const handleChange = (event) => {
+    setNewForm({ ...newForm, [event.target.name]: event.target.value });
+  };
 
   return (
     <form className="form-stack contact-form" onSubmit={onSubmitForm}>
       <h2>Create Contact</h2>
 
       <label htmlFor="firstName">First Name</label>
-      <input 
-      id="firstName" 
-      name="firstName" 
-      type="text" 
-      required 
-      onChange={handleChange}
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        required
+        onChange={handleChange}
       />
 
       <label htmlFor="lastName">Last Name:</label>
-      <input 
-      id="lastName" 
-      name="lastName" 
-      type="text" 
-      required 
-      onChange={handleChange}
+      <input
+        id="lastName"
+        name="lastName"
+        type="text"
+        required
+        onChange={handleChange}
       />
 
       <label htmlFor="street">Street:</label>
-      <input 
-      id="street" 
-      name="street" 
-      type="text" 
-      required 
-      onChange={handleChange}
+      <input
+        id="street"
+        name="street"
+        type="text"
+        required
+        onChange={handleChange}
       />
 
       <label htmlFor="city">City:</label>
-      <input 
-      id="city" 
-      name="city" 
-      type="text" 
-      required 
-      onChange={handleChange}
+      <input
+        id="city"
+        name="city"
+        type="text"
+        required
+        onChange={handleChange}
+      />
+
+      <label htmlFor="email">Email:</label>
+      <input
+        id="email"
+        name="email"
+        type="text"
+        required
+        onChange={handleChange}
+      />
+      
+      <label htmlFor="linkedIn">LinkedIn:</label>
+      <input
+        id="linkedIn"
+        name="linkedIn"
+        type="text"
+        required
+        onChange={handleChange}
+      />
+      
+      <label htmlFor="twitter">Twitter:</label>
+      <input
+        id="twitter"
+        name="twitter"
+        type="text"
+        required
+        onChange={handleChange}
       />
 
       <div className="actions-section">

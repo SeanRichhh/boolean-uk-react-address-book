@@ -24,7 +24,11 @@ function ContactsView() {
   return (
     <div>
       <h2>{contact.firstName} {contact.lastName}</h2>
-      <p>{contact.street} {contact.city}</p>
+      <p>{contact.street}</p>
+      <p>{contact.city}</p>
+      <p>{contact.email}</p>
+      <p>{contact.linkedIn}</p>
+      <p>{contact.twitter}</p>
     </div>
   )
 }
